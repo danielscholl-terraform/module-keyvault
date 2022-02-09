@@ -18,7 +18,7 @@ module "resource_group" {
 
 
 module "keyvault" {
-  source = "git::https://github.com/danielscholl-terraform/module-keyvault?ref=main"
+  source = "git::https://github.com/danielscholl-terraform/module-keyvault?ref=v1.0.0"
   depends_on = [module.resource_group]
 
   name                = substr("iacterraform${module.resource_group.random}", 0, 23)
@@ -26,7 +26,7 @@ module "keyvault" {
 }
 
 module "keyvault_secret" {
-  source = "git::https://github.com/danielscholl-terraform/module-keyvault//keyvault-secret?ref=main"
+  source = "git::https://github.com/danielscholl-terraform/module-keyvault//keyvault-secret?ref=v1.0.0"
   depends_on = [module.keyvault]
 
   keyvault_id = module.keyvault.id
