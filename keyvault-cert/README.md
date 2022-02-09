@@ -10,5 +10,30 @@ A terraform module to provide certificate to a target key vault instance in Azur
 
 
 <!--- BEGIN_TF_DOCS --->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| cert\_import\_filepath | The base64-encoded certificate file path. Changing this forces a new resource to be created. | `string` | n/a | yes |
+| cert\_name | Name of the certifacte to create | `string` | `"pfx-certificate"` | no |
+| content\_type | The Content-Type of the Certificate, such as application/x-pkcs12 for a PFX or application/x-pem-file for a PEM. Changing this forces a new resource to be created. | `string` | `"application/x-pkcs12"` | no |
+| keyvault\_id | The id of the Key Vault where the Certificate should be created. | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| cert\_name | n/a |
+| secret\_id | n/a |
 
 <!--- END_TF_DOCS --->
