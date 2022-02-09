@@ -15,6 +15,27 @@ module "resource_group" {
     environment = "test-environment"
   }
 }
+
+
+module "keyvault" {
+  source = "git::https://github.com/danielscholl-terraform/module-keyvault?ref=main"
+  depends_on = [module.resource_group]
+
+  name                = substr("iacterraform${module.resource_group.random}", 0, 23)
+  resource_group_name = module.resource_group.name
+}
+
+module "keyvault_secret" {
+  source = "git::https://github.com/danielscholl-terraform/module-keyvault//keyvault-secret?ref=main"
+  depends_on = [module.keyvault]
+
+  keyvault_id = module.keyvault.id
+  secrets = {
+    "iac" : "terraform"
+  }
+}
+
+
 ```
 
 <!--- BEGIN_TF_DOCS --->
