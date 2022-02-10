@@ -42,19 +42,19 @@ variable "sku" {
 variable "key_permissions" {
   description = "Permissions that the service principal has for accessing keys from keyvault"
   type        = list(string)
-  default     = ["create", "delete", "get", "list", "purge"]
+  default     = ["Create", "Delete", "Get", "List", "Purge"]
 }
 
 variable "secret_permissions" {
   description = "Permissions that the service principal has for accessing secrets from keyvault"
   type        = list(string)
-  default     = ["set", "delete", "get", "list", "purge"]
+  default     = ["Set", "Delete", "Get", "List", "Purge"]
 }
 
 variable "certificate_permissions" {
   description = "Permissions that the service principal has for accessing certificates from keyvault"
   type        = list(string)
-  default     = ["create", "delete", "get", "list", "purge"]
+  default     = ["Create", "Delete", "Get", "List", "Purge"]
 }
 
 variable "secrets" {

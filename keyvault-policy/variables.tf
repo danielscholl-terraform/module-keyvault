@@ -20,17 +20,17 @@ variable "object_ids" {
 variable "key_permissions" {
   description = "List of key permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey"
   type        = list(string)
-  default     = ["create", "delete", "get", "list"]
+  default     = ["Create", "Delete", "Get", "List"]
 }
 
 variable "secret_permissions" {
   type        = list(string)
   description = "List of secret permissions, must be one or more from the following: backup, delete, get, list, purge, recover, restore and set."
-  default     = ["delete", "get", "set", "list"]
+  default     = ["Delete", "Get", "Set", "List"]
 }
 
 variable "certificate_permissions" {
   type        = list(string)
   description = "List of storage permissions, must be one or more from the following: backup, delete, deletesas, get, getsas, list, listsas, purge, recover, regeneratekey, restore, set, setsas and update."
-  default     = ["create", "delete", "get", "list"]
+  default     = ["Create", "Delete", "Get", "List"]
 }
