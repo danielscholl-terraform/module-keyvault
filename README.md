@@ -49,14 +49,14 @@ module "keyvault_secret" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
-| certificate\_permissions | Permissions that the service principal has for accessing certificates from keyvault | `list(string)` | <pre>[<br>  "create",<br>  "delete",<br>  "get",<br>  "list",<br>  "purge"<br>]</pre> | no |
-| key\_permissions | Permissions that the service principal has for accessing keys from keyvault | `list(string)` | <pre>[<br>  "create",<br>  "delete",<br>  "get",<br>  "list",<br>  "purge"<br>]</pre> | no |
+| certificate\_permissions | Permissions that the service principal has for accessing certificates from keyvault | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge"<br>]</pre> | no |
+| key\_permissions | Permissions that the service principal has for accessing keys from keyvault | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge"<br>]</pre> | no |
 | name | Name of the keyvault to create | `string` | `"spkeyvault"` | no |
 | names | Names to be applied to resources (inclusive) | <pre>object({<br>    environment = string<br>    location    = string<br>    product     = string<br>  })</pre> | <pre>{<br>  "environment": "tf",<br>  "location": "eastus2",<br>  "product": "iac"<br>}</pre> | no |
 | resource\_group\_name | The name of the resource group in which the resources will be created | `string` | n/a | yes |
 | resource\_ip\_whitelist | A list of IPs and/or IP ranges that should have access to the provisioned keyvault | `list(string)` | `[]` | no |
 | resource\_tags | Map of tags to apply to taggable resources in this module. By default the taggable resources are tagged with the name defined above and this map is merged in | `map(string)` | `{}` | no |
-| secret\_permissions | Permissions that the service principal has for accessing secrets from keyvault | `list(string)` | <pre>[<br>  "set",<br>  "delete",<br>  "get",<br>  "list",<br>  "purge"<br>]</pre> | no |
+| secret\_permissions | Permissions that the service principal has for accessing secrets from keyvault | `list(string)` | <pre>[<br>  "Set",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge"<br>]</pre> | no |
 | secrets | A map of secrets for the Key Vault. | `map(string)` | `{}` | no |
 | sku | SKU of the keyvault to create | `string` | `"standard"` | no |
 | subnet\_id\_whitelist | If supplied this represents the subnet IDs that should be allowed to access this resource | `list(string)` | `[]` | no |
