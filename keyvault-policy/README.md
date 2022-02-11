@@ -22,10 +22,11 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| certificate\_permissions | List of storage permissions, must be one or more from the following: backup, delete, deletesas, get, getsas, list, listsas, purge, recover, regeneratekey, restore, set, setsas and update. | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List"<br>]</pre> | no |
-| key\_permissions | List of key permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List"<br>]</pre> | no |
+| certificate\_permissions | List of certificate permissions, must be one or more from the following: Backup, Create, Decrypt, Delete, DeleteIssuers, Get, GetIssuers, Import, List, ListIssuers, ManageContacts, Manag Issuers, Purge, Recover, Restore, SetIssuers and Update. | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List"<br>]</pre> | no |
+| key\_permissions | List of key permissions, must be one or more from the following: Backup, Create, Decrypt, Delete, Encrypt, Get, Import, List, PUrge, Recover, Restore, Sign, UnwrapKey, Update, Verify and WrapKey | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List"<br>]</pre> | no |
 | object\_ids | The object IDs of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Changing this forces a new resource to be created. | `list(string)` | n/a | yes |
-| secret\_permissions | List of secret permissions, must be one or more from the following: backup, delete, get, list, purge, recover, restore and set. | `list(string)` | <pre>[<br>  "Delete",<br>  "Get",<br>  "Set",<br>  "List"<br>]</pre> | no |
+| secret\_permissions | List of secret permissions, must be one or more from the following: Backup, Delete, Get, List, Purge, Recover, Restore and Set. | `list(string)` | <pre>[<br>  "Delete",<br>  "Get",<br>  "Set",<br>  "List"<br>]</pre> | no |
+| storage\_permissions | List of storage permissions, must be one or more from the following: Backup, Delete, DeleteSAS, Get, GetSAS, List, ListSAS, Purge, Recover, RegenerateKey, Restore, Set, SetSAS and Update. | `list(string)` | `[]` | no |
 | tenant\_id | The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | vault\_id | Specifies the Id of the Key Vault resource. | `string` | n/a | yes |
 
