@@ -52,7 +52,7 @@ module "keyvault_secret" {
 |------|-------------|------|---------|:-----:|
 | certificate\_permissions | Permissions that the service principal has for accessing certificates from keyvault | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge"<br>]</pre> | no |
 | key\_permissions | Permissions that the service principal has for accessing keys from keyvault | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge"<br>]</pre> | no |
-| name | Name of the keyvault to create | `string` | `"spkeyvault"` | no |
+| name | Name of the keyvault to create | `string` | n/a | yes |
 | names | Names to be applied to resources (inclusive) | <pre>object({<br>    environment = string<br>    location    = string<br>    product     = string<br>  })</pre> | <pre>{<br>  "environment": "tf",<br>  "location": "eastus2",<br>  "product": "iac"<br>}</pre> | no |
 | resource\_group\_name | The name of the resource group in which the resources will be created | `string` | n/a | yes |
 | resource\_ip\_whitelist | A list of IPs and/or IP ranges that should have access to the provisioned keyvault | `list(string)` | `[]` | no |
