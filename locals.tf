@@ -1,3 +1,3 @@
 locals {
-  name = var.name == null ? "${var.names.product}-${var.names.environment}-${var.names.location}-kv" : var.name
+  name = (var.name != null ? var.name : "${var.names.product}${var.names.environment}")
 }
