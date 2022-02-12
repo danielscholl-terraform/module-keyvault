@@ -2,6 +2,12 @@
 # This module allows the creation of a Key Vault
 ##############################################################
 
+resource "random_string" "random" {
+  length  = 5
+  special = false
+  upper   = false
+}
+
 data "azurerm_client_config" "current" {}
 
 data "azurerm_resource_group" "main" {
@@ -13,6 +19,7 @@ data "azurerm_resource_group" "main" {
 # the `keyvault-policy` module. More information on why can be found here:
 #   https://www.terraform.io/docs/providers/azurerm/r/key_vault.html#access_policy
 resource "azurerm_key_vault" "main" {
+  name = (var.name == null ? "${local.name}${random_string.random.result}" : lower(var.name))
   name                = var.name
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
