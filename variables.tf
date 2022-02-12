@@ -5,7 +5,7 @@
 variable "name" {
   description = "Name of the keyvault to create"
   type        = string
-  default     = "spkeyvault"
+  default     = null
 }
 
 variable "resource_group_name" {
