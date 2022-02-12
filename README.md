@@ -44,6 +44,7 @@ module "keyvault_secret" {
 | Name | Version |
 |------|---------|
 | azurerm | >= 2.90.0 |
+| random | n/a |
 
 ## Inputs
 
